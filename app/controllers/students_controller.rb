@@ -5,9 +5,8 @@ class StudentsController < ApplicationController
   end
 
   def new
-    Student.create(first_name: params[:first_name], last_name: params[:last_name]).tap do |x|
-      redirect_to student_path(x)
-    end
+    @student = Student.create(first_name: params[:first_name], last_name: params[:last_name])
+    redirect_to student_path(x)
   end
 
   def show
