@@ -5,6 +5,7 @@ class StudentsController < ApplicationController
   end
 
   def new
+    Student.create(params)
 
   end
 
